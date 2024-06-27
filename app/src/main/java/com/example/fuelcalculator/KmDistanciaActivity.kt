@@ -5,22 +5,33 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.textfield.TextInputEditText
 
-class  KmDistanciaActivity : AppCompatActivity() {
+class KmDistanciaActivity : AppCompatActivity() {
 
-    private lateinit var buttonkm : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_km_distancia)
 
-    buttonkm = findViewById(R.id.buttonkm)
+        val buttonKm: Button = findViewById(R.id.buttonkm)
+        val tieKmDistancia: TextInputEditText = findViewById(R.id.distancia_destino)
 
-    buttonkm.setOnClickListener { val intent = Intent (this, ResultActivity::class.java)
-        startActivity(intent) }
+        val precoCombutivel = intent.getStringExtra("preco_combustivel")
+        val consumoCarro = intent.getStringExtra("CONSUMO_CARRO")
 
+
+        buttonKm.setOnClickListener {
+            val distanciaDestino = tieKmDistancia.text.toString()
+
+            val intent = Intent(this, ResultActivity::class.java)
+            intent.putExtra("CONSUMO_CARRO", consumoCarro)
+            intent.putExtra("preco_combustivel", precoCombutivel)
+            intent.putExtra("distancia_destino", distanciaDestino)
+            startActivity(intent)
         }
+
+
     }
+}

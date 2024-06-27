@@ -5,21 +5,29 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.textfield.TextInputEditText
 
 class ConsumoCarroActivity : AppCompatActivity() {
 
-    private lateinit var buttoncarro : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_consumo_carro)
 
+        val tieConsumocarro: TextInputEditText = findViewById(R.id.tie_consumocarro)
+        val buttonCarro: Button = findViewById(R.id.buttoncarro)
+        val precoCombutivel = intent.getStringExtra("preco_combustivel")
 
-        buttoncarro = findViewById(R.id.buttoncarro)
+        buttonCarro.setOnClickListener {
+           val consumoCarro = tieConsumocarro.text.toString()
 
-       buttoncarro.setOnClickListener {  val intent = Intent( this, KmDistanciaActivity::class.java)
+           val intent = Intent( this, KmDistanciaActivity::class.java);
+           intent.putExtra("CONSUMO_CARRO", consumoCarro)
+            intent.putExtra("preco_combustivel", precoCombutivel)
            startActivity(intent) }
+
+
+
     }
 }
