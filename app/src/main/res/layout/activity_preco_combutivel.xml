@@ -8,7 +8,6 @@
     android:background="@color/blue"
     tools:context=".PrecoCombutivelActivity">
 
-
     <Button
         android:id="@+id/buttoncombustivel"
         android:layout_width="match_parent"
@@ -21,9 +20,9 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="399dp"
-        android:layout_height="61dp"
+        android:id="@+id/preco_combustivel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="24dp"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/buttoncombustivel"
@@ -33,21 +32,23 @@
         app:layout_constraintVertical_bias="0.877">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tie_Combustivel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ex: 1.80"
             android:inputType="numberDecimal" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Preço do Combustivel"
-        android:textStyle="bold"
-        android:textSize="32dp"
+        android:text="Preço do Combustível"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/preco_combustivel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"

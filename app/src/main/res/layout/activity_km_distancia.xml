@@ -21,7 +21,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/distancia_km"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColorHint="@color/white"
@@ -33,9 +33,11 @@
         app:layout_constraintVertical_bias="0.877">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/distancia_destino"
             android:layout_width="match_parent"
             android:layout_height="61dp"
-            android:hint="Ex: 16km" />
+            android:hint="Ex: 16km"
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -46,7 +48,7 @@
         android:textStyle="bold"
         android:textSize="32dp"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
+        app:layout_constraintBottom_toTopOf="@+id/distancia_km"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
