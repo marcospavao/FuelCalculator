@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class KmDistanciaActivity : AppCompatActivity() {
@@ -24,14 +25,18 @@ class KmDistanciaActivity : AppCompatActivity() {
 
         buttonKm.setOnClickListener {
             val distanciaDestino = tieKmDistancia.text.toString()
-
-            val intent = Intent(this, ResultActivity::class.java)
-            intent.putExtra("CONSUMO_CARRO", consumoCarro)
-            intent.putExtra("preco_combustivel", precoCombutivel)
-            intent.putExtra("distancia_destino", distanciaDestino)
-            startActivity(intent)
+            if (distanciaDestino.isEmpty()) {
+                Snackbar.make(
+                    tieKmDistancia,
+                    "Preencha o campo", Snackbar.LENGTH_LONG
+                ).show()
+            } else {
+                val intent = Intent(this, ResultActivity::class.java)
+                intent.putExtra("CONSUMO_CARRO", consumoCarro)
+                intent.putExtra("preco_combustivel", precoCombutivel)
+                intent.putExtra("distancia_destino", distanciaDestino)
+                startActivity(intent)
+            }
         }
-
-
     }
 }

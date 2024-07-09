@@ -4,17 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
-    tools:context=".MainActivity">
+    android:background="@color/brown"
+    tools:context=".MainActivity"
+    >
+
+
+    <ImageView
+        android:id="@+id/imageViewInicio"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:src="@drawable/inicio"
+        android:background="@drawable/rounded_card"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
 
     <TextView
-        android:layout_width="366dp"
+        android:layout_width="match_parent"
         android:layout_height="81dp"
+        android:layout_margin="32dp"
         android:text="Calculadora de gastos de combustível"
         android:textColor="@color/white"
-        android:textSize="32dp"
+        android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonini"
+        app:layout_constraintBottom_toTopOf="@+id/buttonini"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,7 +44,6 @@
         android:text="Iniciar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
