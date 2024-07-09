@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
-    android:background="@color/blue"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/brown"
     tools:context=".KmDistanciaActivity">
 
 
@@ -20,12 +20,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:layout_gravity="center"
+        android:src="@drawable/distancia"
+        android:background="@drawable/rounded_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/distancia_km"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/white"
         android:layout_margin="24dp"
+        android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/buttonkm"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +48,8 @@
             android:layout_width="match_parent"
             android:layout_height="61dp"
             android:hint="Ex: 16km"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:textColor="@color/white" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -45,9 +57,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Distancia até o Destino"
-        android:textStyle="bold"
-        android:textSize="32dp"
         android:textColor="@color/white"
+        android:textSize="32dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/distancia_km"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

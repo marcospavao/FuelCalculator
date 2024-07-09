@@ -5,8 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
+    android:background="@color/brown"
     tools:context=".PrecoCombutivelActivity">
+
 
     <Button
         android:id="@+id/buttoncombustivel"
@@ -18,6 +19,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+    <ImageView
+        android:id="@+id/IMageViewPCombustivel"
+        android:layout_width="wrap_content"
+        android:layout_height="280dp"
+        android:background="@drawable/rounded_card"
+        android:src="@drawable/preco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/preco_combustivel"
@@ -36,7 +51,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Ex: 1.80"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:textColor="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
