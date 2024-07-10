@@ -19,13 +19,13 @@ class KmDistanciaActivity : AppCompatActivity() {
         val buttonKm: Button = findViewById(R.id.buttonkm)
         val tieKmDistancia: TextInputEditText = findViewById(R.id.distancia_destino)
 
-        val precoCombutivel = intent.getStringExtra("preco_combustivel")
+        val precoCombustivel = intent.getStringExtra("preco_combustivel")
         val consumoCarro = intent.getStringExtra("CONSUMO_CARRO")
 
 
         buttonKm.setOnClickListener {
             val distanciaDestino = tieKmDistancia.text.toString()
-            if (distanciaDestino.isEmpty()) {
+             if (distanciaDestino.isEmpty()) {
                 Snackbar.make(
                     tieKmDistancia,
                     "Preencha o campo", Snackbar.LENGTH_LONG
@@ -33,7 +33,7 @@ class KmDistanciaActivity : AppCompatActivity() {
             } else {
                 val intent = Intent(this, ResultActivity::class.java)
                 intent.putExtra("CONSUMO_CARRO", consumoCarro)
-                intent.putExtra("preco_combustivel", precoCombutivel)
+                intent.putExtra("preco_combustivel", precoCombustivel)
                 intent.putExtra("distancia_destino", distanciaDestino)
                 startActivity(intent)
             }
